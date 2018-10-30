@@ -37,4 +37,11 @@ router.get('/:id', (req, res) => {
   res.render('product', idObj);
 });
 
+router.get('/:id/edit', (req, res) => {
+  let idVar = req.params.id;
+  let idObj = productsDb.getById(idVar);
+  res.render('editproduct', idObj);
+});
+
+
 module.exports = router;

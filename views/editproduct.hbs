@@ -1,0 +1,16 @@
+<h2>Edit Product</h2>
+<form action="/products/{{id}}" method="post">
+
+  {{name}}
+  <input type="text" name="name" value="Enter Name" onfocus="this.value=''">
+  <br>
+  <br> {{price}}
+  <input type="text" name="price" value="Enter Price" onfocus="this.value=''">
+  <br>
+  <br> {{inventory}}
+  <input type="text" name="inventory" value="Inventory Amount" onfocus="this.value=''">
+  <br>
+  <br>
+  <button type="submit">Edit Product</button>
+
+</form>

@@ -4,7 +4,7 @@ function all() {
   return collection;
 }
 
-function add(params) {
+function add() {
   // ...
 }
 
@@ -17,8 +17,8 @@ function editByTitle() {
 }
 
 module.exports = {
-  all: _all,
-  add: _add,
-  getByTitle: _getByTitle,
-  editByTitle: _editByTitle
+  all: all,
+  add: add,
+  getByTitle: getByTitle,
+  editByTitle: editByTitle
 };
