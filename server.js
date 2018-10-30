@@ -8,10 +8,13 @@ const bodyParser = require('body-parser');
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
-  extname: 'hbs'
+  extname: '.hbs',
+ // productsDir: path.join(__dirname, 'views/products'),
+//  articlesDir: path.join(__dirname, 'views/articles')
 }));
 
-app.set('view engine', 'hbs');
+app.set('view engine', '.hbs');
+//app.set('views',path.join(__dirname,'views'))
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/products', productsRouter);

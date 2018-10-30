@@ -1,0 +1,13 @@
+<div class="products">
+  <ul>
+    <h1>Products</h1>
+    {{#each allProd}}
+    <h2><a href="/products/{{id}}">{{name}}</a></h2>
+    <li>Price: ${{price}}</li>
+    <li>Inventory Qty: {{inventory}}</li>
+    <li>ID: {{id}}</li>
+    <br>
+    {{/each}}
+
+  </ul>
+</div>

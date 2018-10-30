@@ -4,8 +4,10 @@ const productsDb = require('../db/products');
 
 router.route('/')
   .get((req, res) => {
-    res.send(`This is products landing`);
-    //res.render('./index', *products*);
+    let allProd = productsDb.getAll();
+    //console.log('allprod', allProd);
+    //res.send(allProd);
+    res.render('index', { allProd });
   })
   //.post(productsDb.makeProduct())
 
@@ -15,9 +17,8 @@ router.route('/')
     let price = req.body.price;
     let inventory = req.body.inventory;
     let prodDbMake = productsDb.makeProduct(name, price, inventory);
-    //res.redirect('/');
-    //console.log(prodDbMake);
-    //res.render()
+    res.redirect('/products');
+
   })
   .put((req, res) => {
 
@@ -27,9 +28,13 @@ router.route('/')
   });
 
 router.get('/new', (req, res) => {
-  //res.send('req body', req.body);
-  //console.log('req', req.body);
   res.render('form');
+});
+
+router.get('/:id', (req, res) => {
+  let idVar = req.params.id;
+  let idObj = productsDb.getById(idVar);
+  res.render('product', idObj);
 });
 
 module.exports = router;
