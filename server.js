@@ -16,6 +16,10 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/products', productsRouter);
 
+
+
+
+
 app.listen(PORT, () => {
   console.log(`Server listening on port:${PORT}`);
 });
