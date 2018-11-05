@@ -2,15 +2,15 @@
 <form action="/products/{{id}}" method="post">
 
   {{name}}
-  <input type="text" name="name" value="Enter Name" onfocus="this.value=''">
+  <input type="text" id="nameEdit" value="{{name}}">
   <br>
   <br> {{price}}
-  <input type="text" name="price" value="Enter Price" onfocus="this.value=''">
+  <input type="text" id="priceEdit" value="{{price}}">
   <br>
   <br> {{inventory}}
-  <input type="text" name="inventory" value="Inventory Amount" onfocus="this.value=''">
+  <input type="text" id="inventoryEdit" value="{{inventory}}">
   <br>
   <br>
-  <button type="submit">Edit Product</button>
+  <button type="submit">Submit Edit</button>
 
 </form>

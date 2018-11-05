@@ -31,10 +31,19 @@ router.get('/new', (req, res) => {
   res.render('form');
 });
 
-router.get('/:id', (req, res) => {
+
+router.put('/:id', (req, res) => {
   let idVar = req.params.id;
-  let idObj = productsDb.getById(idVar);
-  res.render('product', idObj);
+  let grabName = req.body.name;
+  let grabPrice = req.body.price;
+  let grabInventory = req.body.inventory;
+  let testingPut = productsDb.editById(idVar, grabName, grabPrice, grabInventory);
+  //console.log('grabname', grabName);
+  //let grabId = productsDb.getById(idVar);
+  //console.log('grabbing id', grabId);
+  //res.render('editproduct', );
+
+  //console.log('testing put', testingPut);
 });
 
 router.get('/:id/edit', (req, res) => {
@@ -42,6 +51,18 @@ router.get('/:id/edit', (req, res) => {
   let idObj = productsDb.getById(idVar);
   res.render('editproduct', idObj);
 });
+
+router.get('/:id', (req, res) => {
+  let idVar = req.params.id;
+  let idObj = productsDb.getById(idVar);
+  res.render('product', idObj);
+});
+
+// router.get('/:id/edit', (req, res) => {
+//   let idVar = req.params.id;
+//   let idObj = productsDb.getById(idVar);
+//   res.render('editproduct', idObj);
+// });
 
 
 module.exports = router;

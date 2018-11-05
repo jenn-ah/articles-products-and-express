@@ -29,6 +29,22 @@ function getById(id) {
   return result;
 }
 
+function editById(id, name, price, inventory) {
+  let grabProduct = getById(id);
+  let editProduct = { name: name, price: price, inventory: inventory };
+  //console.log('grab product id', grabProduct.id);
+  document.getElementById('nameEdit').value = name;
+  document.getElementById('priceEdit').value = price;
+  document.getElementById('inventoryEdit').value = inventory;
+
+  return editProduct;
+  // if (grabProduct.id === id) {
+  //   return ;
+  // } else {
+  //   return false;
+  // }
+}
+
 function getAll() {
   return allProducts;
 }
@@ -51,5 +67,6 @@ module.exports = {
 
   getAll: getAll,
   makeProduct: makeProduct,
-  getById: getById
+  getById: getById,
+  editById: editById
 }
